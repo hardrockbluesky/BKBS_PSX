@@ -5,11 +5,15 @@ One song rhythm game made to learn C and PS1 development using PSY-Q and LibGS.
 
 Pre-built .bin and .cue files can be found at the [itch.io page](https://hardrockbluesky.itch.io/bambis-knees-bambis-shaking)
 
-### Build environment
+### Build Environment
 * Windows XP VM from [PSXDev.net](https://www.psxdev.net/help/virtual_machine.html) [ I replaced VPC 2007 with Hyper-V ]
 * PSY-Q, Sony's SDK included with that image or [available here](https://www.psxdev.net/downloads.html) with setup help [here](https://www.psxdev.net/help/psyq_install.html).
 
 This project uses [MBDesigns' PS1 Homebrew Source Code](https://mbdesigns.itch.io/ps1-homebrew-source-code-rendering-3d-graphics-with-psyq) as a base, and I recommend that as a place to get started if you want to make homebrew for PS1. There are some additional PSY-Q quirks mentioned in his .txt files that you may need to take care of before BKBS will compile.
+
+### Additional Tools
+* A prebuilt Windows version of [CSVtoNoteBin](https://github.com/hardrockbluesky/CSVtoNoteBin) is included in the Data folder of this project. It converts CSV files from the Unreal NoteBuilder project into binary.
+* 
 
 If you're getting started with PS1 homebrew or want my thoughts about LibGS, TMD, PSY-Q, or just homebrew in general, check the Project Notes.
 
