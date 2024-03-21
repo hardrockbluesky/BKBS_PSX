@@ -15,7 +15,7 @@ This project uses [MBDesigns' PS1 Homebrew Source Code](https://mbdesigns.itch.i
 * A prebuilt Windows version of [CSVtoNoteBin](https://github.com/hardrockbluesky/CSVtoNoteBin) is included in the Data folder of this project. It converts CSV files from the Unreal NoteBuilder project into binary.
 * The Unreal 5 project to author CSV files is [over here](https://github.com/hardrockbluesky/NoteChartBuilder). Think of it as an in-editor tool.
 
-If you're getting started with PS1 homebrew or want my thoughts about LibGS, TMD, PSY-Q, or just homebrew in general, check the Project Notes.
+If you're getting started with PS1 homebrew or want my thoughts about LibGS, TMD, PSY-Q, or just homebrew in general, check the [Development Notes](https://github.com/hardrockbluesky/BKBS_PSX/blob/main/Development%20Notes.md).
 
 
 ### Copyright/License:
