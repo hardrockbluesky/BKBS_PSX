@@ -24,7 +24,7 @@ If you're getting started with PS1 homebrew or want my thoughts about LibGS, TMD
 * [mkpsxiso](https://github.com/Lameguy64/mkpsxiso) is included under GPL 2.0.
 * .C source files are derived from MBDesigns' project linked above, with permission given from him to redistribute and modify.
 * Any included files or code from PSY-Q are Sony's. They are likely abandonware at this point but I do not own them and neither can you!
-* Given the above, and excepting anything from PSY-Q, this project and its code other than the Data and Audio folders are [licensed under MIT](Source/License.txt). I want to see more homebrew, please!
+* Given the above, and excepting anything from PSY-Q, this project and its code other than the Data and Audio folders are [licensed under MIT](License.txt). I want to see more homebrew, please!
 
 ### Other Credits:
 * Artist Chained_Tan - [Base for the character model](https://twitter.com/chained_tan/status/1425635566234873858).
