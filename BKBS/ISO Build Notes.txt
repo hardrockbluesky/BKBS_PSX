@@ -1,0 +1,15 @@
+"Build ISO 16 Bit" will compile the .exe and run mkpsxiso on a 16 bit VM with PSY-Q installed.
+"Build Fixed ISO" will just rebuild the iso *correctly* in modern windows, there is a bug in the older mkpsxiso version with audio tracks. This is also useful for rebuilding after modifying Data or Audio files, you don't need to boot into PSY-Q unless the .exe needs to be recompiled.
+
+There are two config options:
+
+Models and textures:
+Hardware Optimized = less foliage, should hold 30fps on real hardware [tested on NTSC 5500 console, no PAL support for now, sorry]
+Non-Optimized = the intended look, should run fine on Mister and software emulation
+
+Note charts:
+BambiCSV.bin is slightly different for various ways of playing due to tiny timing differences. The Mister version should be used on real hardware or the Mister PSX core. The Duckstation version is for standalone Duckstation. Mister should have all hacks and cheats disabled, Duckstation as well. Other emulators may or may not work, you can edit the CSV file manually to add or remove entries to adjust timing or the Unreal project to make your own note chart. Convert your CSV with CSVtoNoteBin.
+
+The files included by default in the DATA folder are for Duckstation build.
+
+Copy your preferred files into the DATA folder, rename your chosen note chart to BambiCSV.bin. Your final DATA folder should have files with names matching those in the mkpsxiso cuesheet in the main project folder. Run "Build Fixed ISO.BAT" to generate your ISO on a modern Windows system. Unfortunately this is the part that's annoying - I can't set a permanent location for the CDDA file on the disc, so if any included file sizes changed, you either need to recompile after updating the songLoc in audio.c, or you need to define a custom pregap in mkpsxiso so that the cue file shows Index 01 for Track 02 Audio is the same as the songLoc in audio.c. I've wasted hours trying to find some combination of CD commands that will just auto-track and it's not accurate enough. Maybe if anyone asks me about it we can fix it.

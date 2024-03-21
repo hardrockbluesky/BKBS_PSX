@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<iso_project image_name="game.bin" cue_sheet="game.cue" no_xa="1">
+	<track type="data">
+		<license file="LICENSEA.DAT"/>
+		<directory_tree>
+			<file name="SYSTEM.CNF"	type="data"	source="SYSTEM.CNF"/>
+			<file name="MAIN.EXE"	type="data"	source="MAIN.EXE"/>
+			<!-- Add your own files or folders here -->
+			<file name="HOUSE1.TIM"	type="data"	source="DATA/HOUSE1.TIM"/>
+			<file name="HOUSE2.TIM"	type="data"	source="DATA/HOUSE2.TIM"/>
+			<file name="HOUSE3.TIM"	type="data"	source="DATA/HOUSE3.TIM"/>
+			<file name="HOUSE4.TIM"	type="data"	source="DATA/HOUSE4.TIM"/>
+			<file name="HOUSE1.TMD"	type="data"	source="DATA/HOUSE1.TMD"/>
+			<file name="HOUSE2.TMD"	type="data"	source="DATA/HOUSE2.TMD"/>
+			<file name="HOUSE3.TMD"	type="data"	source="DATA/HOUSE3.TMD"/>
+			<file name="HOUSE4.TMD"	type="data"	source="DATA/HOUSE4.TMD"/>
+			<file name="CHART.BIN" type="data" source="DATA/BAMBICSV.BIN"/>
+			<file name="RIPPLE.TIM"	type="data"	source="DATA/RIPPLE.TIM"/>
+			<file name="ARROWS.TIM"	type="data"	source="DATA/ARROWS.TIM"/>
+			<dummy sectors="1024"/>
+		</directory_tree>
+	</track>
+	<track type="audio" source="AUDIO/BAMBI.WAV"/>
+	<track type="audio" source="AUDIO/UNTITLED.WAV"/>
+</iso_project>

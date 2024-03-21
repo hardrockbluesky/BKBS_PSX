@@ -1,0 +1,6 @@
+#RSD data describing the relationships to the PLY, MAT, and texture files
+@RSD940102 
+PLY=House2.ply
+MAT=House2.mat
+NTEX=1
+TEX[0]=House2.tim
