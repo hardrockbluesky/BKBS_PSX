@@ -22,7 +22,7 @@ If you're getting started with PS1 homebrew or want my thoughts about LibGS, TMD
 * Contents of the Data and Audio folders are owned by [hardrockbluesky](https://gkalafut.github.io/).
 * You may, however, use those contents non-commercially provided you properly credit me and you. Make clear what is mine and what is yours. Your usage is not my endorsement of your project. If you use it for anything I deem in poor taste or hateful, your permission/license will be revoked.
 * [mkpsxiso](https://github.com/Lameguy64/mkpsxiso) is included under GPL 2.0.
-* .C source files are derived from MBDesigns' project linked above, with permission given from him to redistribute and modify.
+* .C source files are derived from MBDesigns' project linked above, with permission given from him to redistribute and modify. (Main.c having the most extensive modifications)
 * Any included files or code from PSY-Q are Sony's. They are likely abandonware at this point but I do not own them and neither can you!
 * Given the above, and excepting anything from PSY-Q, this project and its code other than the Data and Audio folders are [licensed under MIT](License.txt). I want to see more homebrew, please!
 
