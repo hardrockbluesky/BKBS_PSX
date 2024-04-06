@@ -27,6 +27,7 @@
 #include "3D.c"
 #include "Cine.c"
 
+// Define your constants here. Many of the vars below could/should probably be moved up here at some point.
 #define NUM_NOTES 30
 #define GOAL_Y 90
 
@@ -147,7 +148,7 @@ unsigned char effectType = 5;
 // Which frame to start the end credits on
 int endingFrame = 6060;
 
-// Game state var/bool
+// Game state var
 int playing;
 
 // Camera cine vars, global for fast re-init
@@ -186,7 +187,7 @@ void Initialize() {
 	// clear out the reverb from boot sounds
 	audio_init();
 
-    // Get the CD system started so you can read files
+	// Get the CD system started so you can read files
 	ReadCDInit();
 
 	// Do all the necessary steps for getting
@@ -200,14 +201,14 @@ void Initialize() {
 	// The next part is going to take a while, display loading screen
 	LoadingScreen();
 
-    // Start reading the CD
+	// Start reading the CD
 	cd_open();
 
 	// Read a specific file by name and
 	// store a pointer to it in the cdData variable.
 	// (make sure to edit mkpsxiso/cuesheet.xml and
-    // add it there or it won't be included on the CD)
-    // Think of these array indices as file slots.
+	// add it there or it won't be included on the CD)
+	// Think of these array indices as file slots.
 	cd_read_file("HOUSE1.TMD", &cdData[0]);
 	cd_read_file("HOUSE1.TIM", &cdData[1]);
 	cd_read_file("HOUSE2.TMD", &cdData[2]);
@@ -225,7 +226,7 @@ void Initialize() {
 
 	// Load the TIM texture into VRAM
 	// The number is the slot you want to load from.
-    loadTexture((u_char *)cdData[1]);
+	loadTexture((u_char *)cdData[1]);
 	loadTexture((u_char *)cdData[3]);
 	loadTexture((u_char *)cdData[5]);
 	loadTexture((u_char *)cdData[7]);
@@ -235,10 +236,10 @@ void Initialize() {
 	// Load TMD models
 
 	// LoadTMD(
-    //    Pointer to the TMD Model to load,
-    //    The Object variable to store the TMD model in [defined in 3D.C],
-    //    Lighting on=1 off=0
-    // );
+	//    Pointer to the TMD Model to load,
+	//    The Object variable to store the TMD model in [defined in 3D.C],
+	//    Lighting on=1 off=0
+	// );
 	// Returns number of models loaded from the TMD
 
 	ObjectCount += LoadTMD(cdData[0], &Object[0], 0);
@@ -250,7 +251,7 @@ void Initialize() {
 	initCine();
 }
 
-// This function runs once right after he Initialize function
+// This function runs right after the Initialize function
 // and before the Update function, the game restarts here after each loop.
 // Anything that needs to be set/reset at the beginning of play needs to be
 // set here.
@@ -264,7 +265,7 @@ void Start() {
 	// The V in vx, vy, and vz stands for Vector, ezpz
 	// This project doesn't really use any!
 
-	// Camera
+	// Camera default position (overwritten by cine system but here for debug)
 	Camera.position.vx = -1550;
 	Camera.position.vy = 600;
 	Camera.position.vz = 3950;
@@ -349,19 +350,21 @@ void Start() {
 	// Init camera position vars
 	APos = 0;
 	BPos = 1;
-    lerpTime = 0;
+	lerpTime = 0;
 	
 	// Init framecount and lag counter
 	frameCount = 0;
 	frameLagTotal = 0;
 	
-	// Set playing to 1(true) so our tick runs in main after this function returns. This will get flipped to 0 at the end of play, leaving the tick loop and restarting the game.
+	// Set playing to 1(true) so our tick runs in main after this function returns. 
+	// This will get flipped to 0 at the end of play, leaving the tick loop and restarting the game.
 	playing = 1;
 	
 	// Start playing CD track next to last so it's as close to the first tick as possible
 	PlaySyncedTrack();
 	
-	// VSync(-1) returns the number of syncs [~60/s for NTSC] since .exe was started, we'll use this to compensate for missed frames in the note update logic.
+	// VSync(-1) returns the number of syncs [~60/s for NTSC] since .exe was started.
+	// We'll use this to compensate for missed frames in the note update logic.
 	// This should be the last thing before tick starts
 	lastVSync = VSync(-1) + (frameDelay * 2);
 }
@@ -371,10 +374,12 @@ void Update () {
 	
 	frameCount++;
 	
-    // This gets the status of all the controller buttons
+	// This gets the status of all the controller buttons
 	padUpdate();
 
-	// Update arrowNotes, delay to ensure notes are synced. To advance note position instead of delay, add silence to the beginning of track. Don't update arrows after the end credits, it'll keep reading junk data in as arrows.
+	// Update arrowNotes, delay to ensure notes are synced. 
+	// To advance note position instead of delay, add silence to the beginning of track. 
+	// Don't update arrows after the end credits, it'll keep reading junk data in as arrows.
 	if ( frameCount > frameDelay && frameCount < endingFrame ) {
 		ArrowUpdate();
 	}
@@ -464,7 +469,8 @@ void Render () {
 }
 
 void Controls () {
-	
+
+	// Could do this as a callback event instead, need to research
 	if ( padCheckPressed(Pad1Select) ) {
 		// Scroll through effect types
 		if ( effectType == 5 ) {
@@ -881,7 +887,7 @@ char ArrowUpdate () {
 	if (noteMissed) {
 		// If player missed, increase desat. Same idea as above.
 		if (desaturation < 120){
-					desaturation += 4;
+			desaturation += 4;
 		}
 	}
 	
@@ -1035,7 +1041,8 @@ void CamUpdate () {
 	}
 }
 
-// Bitshift comparison, returns 0 or 1 to determine which notes to activate from chart line
+// Bitshift comparison, returns 0 or 1 to determine which notes to activate from chart line.
+// Should probably just be done inline, I had just learned what a bitshift was when I did this.
 char ReadChart (unsigned char memLoc, char whichBit) {
 	memLoc = memLoc << whichBit;
 	//FntPrint("memLoc = %d\n", memLoc);
