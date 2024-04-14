@@ -1,17 +1,19 @@
+//
+// Hi! This is hardrockbluesky, standing on the shoulders of giants.
+// The base for this game is MBDesigns' project at https://mbdesigns.itch.io/ps1-homebrew-source-code-rendering-3d-graphics-with-psyq
+// I've made pretty extensive edits and additions, treating his project as an engine to build on. Basically anything that isn't "Display and move a single object" is me.
+// I leaned towards over-explaining because I want to see more games get made.
+// Anything not explained by my [or his] comments is likely documented in PSY-Q's reference pdf's or it's just good ol' C.
+// Original header notes below:
+//
+////////////////////////////////////////////////////////////////////////////
+//
 // Some of The code in this project comes from a combination of things from
 // Wituz's Playstation Development series on youtube
 // and Lameguy64's TMD model viewer example.
 //
 // Edits by Rubixcube6 aka MBDesigns
 // Website: https://www.masonbarrydesigns.com/
-//
-////////////////////////////////////////////////////////////////////////////
-//
-// Hi! This is hardrockbluesky, standing on the shoulders of giants.
-// The base for this game is MBDesigns' project at https://mbdesigns.itch.io/ps1-homebrew-source-code-rendering-3d-graphics-with-psyq
-// I've made pretty extensive edits and additions, treating his project as an engine to build off of.
-// I leaned towards over-explaining because I want to see more games get made.
-// Anything not explained by my [or his] comments is likely documented in PSY-Q's reference pdf's or it's just good ol' C.
 //
 ////////////////////////////////////////////////////////////////////////////
 
@@ -51,8 +53,6 @@ char ReadChart(unsigned char memLoc, char whichBit);
 
 
 
-
-
 //////////////////////////////////////
 ////    Game variables go here    ////
 //////////////////////////////////////
@@ -81,7 +81,7 @@ int frameLagTotal = 0;
 // Control arrowNote default color
 u_char desaturation = 80;
 
-// Every TMD model you load needs a struct (which is basically just the transform) These could just be their own typedef, honestly.
+// Every TMD model you load needs a struct (which is basically just the transform) These should just be their own typedef, honestly.
 struct {
 	VECTOR position;
 	SVECTOR rotation;
@@ -289,7 +289,7 @@ void Start() {
 	noteField.y = GOAL_Y;
 	noteField.w = 400;
 	noteField.h = 1;
-	noteField.attribute=(1<<30); // 30 is usually semi-trans toggle bit for GS types
+	noteField.attribute=(1<<30); // bit 30 is usually semi-trans toggle bit for GS types
 	
 	beam1.x = -30;
 	beam2.x = -10;
@@ -298,7 +298,7 @@ void Start() {
 	beam1.y = beam2.y = beam3.y = beam4.y = -120;
 	beam1.h = beam2.h = beam3.h = beam4.h = 240;
 	//beam1.r = beam1.g = beam1.b = 254;
-	beam1.attribute=(3<<28) + (1<<30); // 28 is usually semi-trans blend mode for GS types
+	beam1.attribute=(3<<28) + (1<<30); // bit 28 is usually semi-trans blend mode for GS types
 	beam2.attribute=(3<<28) + (1<<30);
 	beam3.attribute=(3<<28) + (1<<30);
 	beam4.attribute=(3<<28) + (1<<30);
