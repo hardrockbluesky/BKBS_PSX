@@ -5,6 +5,8 @@ One song rhythm game made to learn C and PS1 development using PSY-Q and LibGS.
 
 Pre-built .bin and .cue files can be found at the [itch.io page](https://hardrockbluesky.itch.io/bambis-knees-bambis-shaking)
 
+Video playthrough with some mild sync issues [here.](https://www.youtube.com/watch?v=pl0-Lkwz1Hw) Emulator and real hardware should be essentially flawless.
+
 ### Build Environment
 * Windows XP VM from [PSXDev.net](https://www.psxdev.net/help/virtual_machine.html) [ I replaced VPC 2007 with Hyper-V ]
 * PSY-Q, Sony's SDK included with that image or [available here](https://www.psxdev.net/downloads.html) with setup help [here](https://www.psxdev.net/help/psyq_install.html).
