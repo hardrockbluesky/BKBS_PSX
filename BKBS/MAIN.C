@@ -151,7 +151,7 @@ int endingFrame = 6060;
 // Game state var
 int playing;
 
-// Camera cine vars, global for fast re-init
+// Camera cine vars, global for fast re-init [PS1 can be weird and I'm still learning the lower level reasons]
 int APos;
 int BPos;
 int lerpTime;
@@ -224,7 +224,7 @@ void Initialize() {
 	// Stop reading the CD
 	cd_close();
 
-	// Load the TIM texture into VRAM
+	// Load the TIM textures into VRAM
 	// The number is the slot you want to load from.
 	loadTexture((u_char *)cdData[1]);
 	loadTexture((u_char *)cdData[3]);
