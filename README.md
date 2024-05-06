@@ -21,7 +21,7 @@ If you're getting started with PS1 homebrew or want my thoughts about LibGS, TMD
 
 
 ### Copyright/License:
-* Contents of the Data and Audio folders are owned by [hardrockbluesky](https://gkalafut.github.io/).
+* Contents of the Data and Audio folders are owned by [hardrockbluesky](https://hardrockbluesky.github.io/3D.html).
 * You may, however, use those contents non-commercially provided you properly credit me and you. Make clear what is mine and what is yours. Your usage is not my endorsement of your project. If you use it for anything I deem in poor taste or hateful, your permission/license will be revoked.
 * [mkpsxiso](https://github.com/Lameguy64/mkpsxiso) is included under GPL 2.0.
 * .C source files are modified or copied from MBDesigns' project linked above, with permission given from him to redistribute and modify. (Main.c having the most extensive changes)
