@@ -1,11 +1,11 @@
 # BKBS_PSX
 One song rhythm game made to learn C and PS1 development using PSY-Q and LibGS.
 
-![BKBSCover1HalfSize](https://github.com/gkalafut/BKBS_PSX/assets/38575131/4c2735c7-9286-4603-9551-3b3ad1b8e27c) 
+[![BKBS Playthrough Youtube Embed](https://img.youtube.com/vi/pl0-Lkwz1Hw/0.jpg)](https://www.youtube.com/watch?v=pl0-Lkwz1Hw)
 
 Pre-built .bin and .cue files can be found at the [itch.io page](https://hardrockbluesky.itch.io/bambis-knees-bambis-shaking)
 
-Video playthrough with some mild sync issues [here.](https://www.youtube.com/watch?v=pl0-Lkwz1Hw) Emulator and real hardware should be essentially flawless.
+Video playthrough with some mild sync issues [here.](https://www.youtube.com/watch?v=pl0-Lkwz1Hw) Emulator and real hardware should be essentially flawless, assuming your emulator does CD emu properly!
 
 ### Build Environment
 * Windows XP VM from [PSXDev.net](https://www.psxdev.net/help/virtual_machine.html) [ I replaced VPC 2007 with Hyper-V ]
